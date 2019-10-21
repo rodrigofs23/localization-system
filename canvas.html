@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>RTLS CAP/UFSJ</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="canvas.js"></script>
+    </head>
+
+    <body>
+    <body>
+
+    <div style="display:none;">		
+	<img id="scream" width="900" height="450" src="biblioteca.png" alt="The Scream">
+    </div>
+
+    <div style="position: relative;">
+        <canvas id="myCanvas" width="900" height="450" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+        <canvas id="layer2" width="900" height="450" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+</div>
+
+	<script>
+		window.onload = function() {
+    		   var canvas = document.getElementById("myCanvas");
+    		   var ctx = canvas.getContext("2d");
+    		   var img = document.getElementById("scream");
+   		   ctx.drawImage(img, 0, 0);
+		};
+	</script>
+
+    </body>
+</html>

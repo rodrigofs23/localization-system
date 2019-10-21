@@ -1,0 +1,24 @@
+﻿$(document).ready(function() {
+	setInterval(function() { atualiza(); }, 1000);
+})
+
+
+function atualiza(){
+    $.ajax({
+        url: "http://www.redecap.com/webs.php/position", 
+        type: 'GET',
+        dataType: 'json',
+        success: function (result) {
+	    console.log(result);
+	    var c = document.getElementById("layer2");
+	    var ctx = c.getContext("2d");
+            ctx.clearRect(0,0,900,450);
+            $.each(result, function (index, item) {
+		ctx.beginPath();
+		ctx.arc(item.x/4,item.y/4,10,0,2*Math.PI);                
+                ctx.fillStyle = "red";
+                ctx.fill();
+            });
+	}
+    });
+};
